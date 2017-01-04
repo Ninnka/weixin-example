@@ -23,23 +23,16 @@ if($fileJson->time < time()-7000){
 else{
   $access_token = $fileJson->access_token;
 }
-// echo $access_token;
 
-// 用户的openid
-$openid = 'oNcA9w7GJmypTW02EBXCDgbsEobE';
 
-//获取用户信息地址
+$url_user_list = "https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token=".$access_token;
 
-$url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
+$list = file_get_contents($url_user_list);
 
-$user = file_get_contents($url);
+$obj = json_decode($list);
 
-$obj = json_decode($user);
-echo "<table>";
-echo "<tr>
-  <td><img style='width:50px' src='{$obj->headimgurl}'/></td>
-  <td>{$obj->nickname}</td>
-  <td>".($obj->sex==1?"男":"女")."</td>
-  <td>{$obj->city}</td>
-</tr>";
-echo "</table>";
+var_dump($obj);
+
+
+
+ ?>
