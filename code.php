@@ -17,10 +17,11 @@ $url_get_token = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='.$app
 $str = file_get_contents($url_get_token);
 
 $json = json_decode($str);
-
+var_dump($json);
+echo "<br>";
 $access_token = $json->access_token;
 $openid = $json->unionid;
-echo "access_token: ".$access_token;
+echo "access_token: ".$access_token."<br>";
 echo "openid: ".$openid;
 
 $url_get_openid = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
