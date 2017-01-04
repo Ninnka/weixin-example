@@ -2,33 +2,26 @@
 $appid = 'wx9e04810f0033f158';
 $secret = 'ff165d3bba903801dd02712c5b57ec8f';
 
-// 获取access_token地址
 $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={$appid}&secret={$secret}";
-$filepathsae = "saemc://access_token.txt";
+//https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxe07d46a242f6c33d&secret=4e561fc046b0726e6ede200366e8239f
 
-// $filepath = "access_token.txt";
-
-$str = file_get_contents($filepathsae);
-echo $str;
-
-// $str = file_get_contents($filepath);
-
-$data = json_decode($str);
-
-
-if($data->time < time() - 7000){
+$fileCon = file_get_contents("saemc://access_token.txt");
+$fileJson = json_decode($fileCon);
+// time();
+//判断access_token是否过期
+if($fileJson->time < time()-7000){
+  //  通过接口重新获取access_token
   $str = file_get_contents($url);
   $json = json_decode($str);
-  $data->access_token = $json->access_token;
   $access_token = $json->access_token;
-  $data->time = time()+7000;
-  $str = json_encode($data);
 
-  file_put_contents($filepathsae, $str);
+  $data = array("access_token" =>$access_token,"time"=>time());
+  $json_str = json_encode(data);
 
-  // file_put_contents($filepath, $str);
-}else{
-  $access_token = $data->access_token;
+  file_put_contents("saemc://access_token.txt",$json_str);
+}
+else{
+  $access_token = $fileJson->access_token;
 }
 
 // 根据 openid 获取用户信息
