@@ -24,7 +24,9 @@ $openid = $json->openid;
 echo "access_token: ".$access_token."<br>";
 echo "openid: ".$openid."<br>";
 
-$url_get_openid = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
+// $url_get_openid = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
+
+$url_get_openid = 'https://api.weixin.qq.com/sns/userinfo?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
 
 $user = file_get_contents($url_get_openid);
 
