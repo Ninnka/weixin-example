@@ -39,7 +39,8 @@ $url_userinfo = "https://api.weixin.qq.com/cgi-bin/user/info?access_token={$acce
 
 $data = file_get_contents($url_userinfo);
 $obj = json_decode($data);
-
+var_dump($obj);
+echo "<br>";
 // echo $str;
 echo "<table>";
 echo "<tr>
