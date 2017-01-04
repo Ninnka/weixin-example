@@ -32,7 +32,7 @@ $list = file_get_contents($url_user_list);
 $obj = json_decode($list);
 
 $arr = $obj->data->openid;
-
+echo $arr;
 for($i = 0; $i < count($arr); $i++){
    $openid = $arr[$i];
    $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
