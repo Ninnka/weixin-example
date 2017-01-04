@@ -1,5 +1,4 @@
 <?php
-$access_token = "";
 $appid = 'wx9e04810f0033f158';
 $secret = 'ff165d3bba903801dd02712c5b57ec8f';
 
@@ -25,7 +24,6 @@ if($data->time < time() - 7000){
   $data->time = time()+7000;
   $str = json_encode($data);
 
-
   file_put_contents($filepathsae, $str);
 
   // file_put_contents($filepath, $str);
@@ -39,8 +37,8 @@ $openid = 'oNcA9w7GJmypTW02EBXCDgbsEobE';
 // $access_token = 'oHi7ur_WSlyrgEzLcbtZOuBV6W7G3dswmctb6t0nIVz8t_Q9yBTFcN-JyX7L0hqX-MIs4TnM-N0wFF9OiJauRIcBQ3jI3krqWE8Dv6ChLKQNXIeADAWGR';
 $url_userinfo = "https://api.weixin.qq.com/cgi-bin/user/info?access_token={$access_token}&openid={$openid}&lang=zh_CN";
 
-$data = file_get_contents($url_userinfo);
-$obj = json_decode($data);
+$user = file_get_contents($url_userinfo);
+$obj = json_decode($user);
 var_dump($obj);
 echo "<br>";
 // echo $str;
