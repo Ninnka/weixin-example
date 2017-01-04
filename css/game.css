@@ -1,0 +1,726 @@
+html {
+    font-size: 100px;
+}
+
+.root {
+    margin: 0 auto;
+    width: 6.4rem;
+    /*max-width: 640px;*/
+}
+
+
+/**
+ * ---------------------------------------------------------------------
+ * 开始前
+ */
+
+.game-wrapper {
+    width: 100%;
+    height: 11.5rem;
+    /*max-height: 1136px;*/
+    background-image: url(../public/imgs/game_bg.png);
+    background-size: cover;
+    position: relative;
+}
+
+
+/* 底部导航栏 */
+
+.game-nav {
+    position: absolute;
+    width: 5.76rem;
+    height: 1.15rem;
+    bottom: 0.52rem;
+    left: 0.3rem;
+    background-image: url(../public/imgs/game-nav.png);
+    background-size: cover;
+}
+
+.game-nav-item {
+    position: absolute;
+    border-radius: 0.16rem;
+    top: 0.13rem;
+    /*background: blue;*/
+}
+
+.count-money {
+    /*1.27 0.89*/
+    width: 1.27rem;
+    height: 0.89rem;
+    left: 0.15rem;
+}
+
+.game-rule {
+    /*1.3 0.93*/
+    width: 1.3rem;
+    height: 0.93rem;
+    left: 1.52rem;
+}
+
+.game-award {
+    width: 1.3rem;
+    height: 0.93rem;
+    right: 1.59rem;
+}
+
+.awardticket-use {
+    width: 1.3rem;
+    height: 0.93rem;
+    right: 0.13rem;
+}
+
+
+/* 开始按钮部分 */
+
+.game-start-btn-wrapper {
+    position: absolute;
+    height: 2.3rem;
+    /*background: blue;*/
+    width: 100%;
+    bottom: 2.33rem;
+    text-align: center;
+}
+
+.game-start-btn>img {
+    width: 2.28rem;
+    height: 2.3rem;
+}
+
+.expansion-animation {
+    animation-name: expansion;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    ;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes expansion {
+    from {
+        width: 2.28rem;
+        height: 2.3rem;
+    }
+    to {
+        width: 2.1rem;
+        height: 2.13rem;
+    }
+}
+
+.game-start-finger {
+    position: absolute;
+    width: 0.88rem;
+    height: 0.73rem;
+    right: 1.81rem;
+    bottom: 0.45rem;
+}
+
+
+/* 标题-挑战 */
+
+
+/*.title-challenge {
+    position: absolute;
+    top: 1.4rem;
+    left: 0rem;
+    width: 6.18rem;
+    height: 3.58rem;
+}*/
+
+.title-challenge-top {
+    width: 5.52rem;
+    height: 1.63rem;
+    position: absolute;
+    /*top: 1.4rem;
+    left: 0.25rem;*/
+    opacity: 0;
+    animation-name: challenge_fade;
+    animation-duration: 1.2s;
+    animation-delay: 0.3s;
+    animation-timing-function: ease-in;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes challenge_fade {
+    from {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        top: 3rem;
+        left: 3.2rem;
+    }
+    to {
+        opacity: 1;
+        width: 5.52rem;
+        height: 1.63rem;
+        top: 1.4rem;
+        left: 0.25rem;
+    }
+}
+
+.title-challenge-bottom {
+    position: absolute;
+    top: 2.70rem;
+    left: 0.1rem;
+    height: 2.10rem;
+    width: 6.20rem;
+    animation-name: challenge_shake;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transform-origin: center center;
+    transform: rotate(10deg);
+}
+
+@keyframes challenge_shake {
+    0% {
+        transform: rotate(10deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    80% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* 导航内容部分 */
+
+.game-nav-content-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*background: rgba(30, 30, 30, 0.8);*/
+    background-image: url(../public/imgs/mask.png);
+    background-size: cover;
+}
+
+
+/* 关闭按钮 */
+
+.button-close {
+    height: 0.34rem;
+    width: 0.34rem;
+    position: absolute;
+    right: 0.94rem;
+    top: 1.75rem;
+    border-radius: 0.17rem;
+    /*background: blue;*/
+    z-index: 3;
+}
+
+
+/* 导航内容 */
+
+.item-hidden {
+    display: none;
+}
+
+.nav-content-item {
+    position: absolute;
+    top: 1.77rem;
+    left: 0.83rem;
+    width: 4.74rem;
+    height: 6.86rem;
+    background-image: url(../public/imgs/react-main.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*text-align: center;*/
+}
+
+
+/* 排行榜*/
+
+.game-rank-wrapper {
+    height: 6.86rem;
+}
+
+.game-rank-wrapper>img {
+    width: 2.36rem;
+    height: 0.87rem;
+    position: absolute;
+    top: 0.40rem;
+    left: 1.3rem;
+}
+
+.rank-list {
+    position: absolute;
+    top: 1.25rem;
+    left: 0.35rem;
+    width: 4.08rem;
+}
+
+.rank-listitem {
+    height: 0.96rem;
+    width: 4.08rem;
+    border-bottom: 1px dashed rgb(200, 200, 200);
+    position: relative;
+    /*display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;*/
+}
+
+.rank-award {
+    /*flex-grow: 0;
+    flex-shrink: 0;*/
+    vertical-align: middle;
+    width: 0.32rem;
+    height: 0.44rem;
+    margin-left: 0.05rem;
+}
+
+.rank-number {
+    vertical-align: middle;
+    font-size: 0.4rem;
+    margin-left: 0.14rem;
+    display: inline-block;
+}
+
+.rank-avatar {
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 0.35rem;
+    vertical-align: middle;
+    margin-left: 0.2rem;
+}
+
+.rank-username {
+    font-size: 0.25rem;
+    color: #2e2e2e;
+    vertical-align: middle;
+    margin-left: 0.15rem;
+}
+
+.rank-scope {
+    font-size: 0.25rem;
+    position: absolute;
+    top: 0.45rem;
+    right: 0.13rem;
+}
+
+
+/* 规则说明 */
+
+.game-rule-wrapper {
+    /*height: 6.35rem;*/
+    box-sizing: border-box;
+    padding-top: 0.5rem;
+}
+
+.rule-title {
+    text-align: center;
+    font-size: 0.39rem;
+    color: #353535;
+    margin: 0.30rem 0 0.15rem;
+}
+
+.rule-detail {
+    max-width: 90%;
+    margin: 0 auto;
+    line-height: 1.3;
+    font-size: 0.22rem;
+    color: #555;
+}
+
+
+/* 奖励奖品 */
+
+.game-award-wrapper {
+    box-sizing: border-box;
+    padding-top: 0.5rem;
+}
+
+.award-title {
+    text-align: center;
+    font-size: 0.39rem;
+    color: #353535;
+    margin: 0.30rem 0 0.15rem;
+}
+
+.award-detail {
+    max-width: 90%;
+    margin: 20px auto;
+    line-height: 1.3;
+    font-size: 0.22rem;
+    color: #555;
+}
+
+
+/* 奖券使用说明 */
+
+.game-awardticket-wrapper {
+    box-sizing: border-box;
+    padding-top: 0.4rem;
+}
+
+.awardticket-title {
+    text-align: center;
+    font-size: 0.39rem;
+    color: #353535;
+    margin: 0.30rem 0 0.15rem;
+}
+
+.awardticket-detail {
+    max-width: 90%;
+    margin: 8px auto;
+    line-height: 1.3;
+    font-size: 0.22rem;
+    color: #555;
+}
+
+
+/* 注册页面 */
+
+.empty {
+    width: 100%;
+    height: 1.29rem;
+}
+
+.game-register {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../public/imgs/mask.png);
+}
+
+.game-register-content {
+    position: absolute;
+    top: 1.77rem;
+    left: 0.83rem;
+    width: 4.74rem;
+    height: 6.86rem;
+    background-image: url(../public/imgs/react-main.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.register-title {
+    width: 4.11rem;
+    height: 0.80rem;
+    position: absolute;
+    left: 0.30rem;
+    top: 0.58rem;
+}
+
+.register-notification {
+    text-align: center;
+    font-size: 0.22rem;
+    color: #353535;
+    line-height: 1.3;
+}
+
+.input-wrapper {
+    margin: 0 auto;
+    background-image: url(../public/imgs/input-bg.png);
+    width: 3.55rem;
+    height: 0.76rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.24rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.register-input {
+    border: 0;
+    background: rgba(255, 255, 255, 0);
+    position: absolute;
+    margin: 0.18rem auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 0.42rem;
+    width: 3.00rem;
+    font-size: 0.25rem;
+    color: #353535;
+}
+
+.register-gamestart {
+    text-align: center;
+    font-size: 0.316rem;
+    color: #fff;
+    width: 2.58rem;
+    height: 0.85rem;
+    line-height: 0.85rem;
+    margin: 0 auto;
+    background-image: url(../public/imgs/register-gamestart-react.png);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-position: center;
+    border-radius: 0.2rem;
+}
+
+
+/**
+ * ------------------------------------------------------------------------
+ * 游戏中
+ */
+
+.gaming {
+    overflow: hidden;
+    width: 100%;
+    height: 11.5rem;
+    background-image: url(../public/imgs/gaming.png);
+    background-size: cover;
+    position: relative;
+}
+
+.gaming-footer {
+    width: 100%;
+    height: 1.62rem;
+    position: absolute;
+    bottom: 0px;
+    background-image: url(../public/imgs/foot.png);
+    background-size: 120% 120%;
+    background-position: -1.24rem 0;
+    background-repeat: no-repeat;
+}
+
+.money-wrapper {
+    width: 3.82rem;
+    height: 4.62rem;
+    background-image: url(../public/imgs/money_static.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 0;
+    position: absolute;
+    bottom: 0;
+    left: 1.28rem;
+}
+
+.money {
+    width: 3.7rem;
+    /*height: 4.62rem;*/
+    position: absolute;
+    bottom: -3.1rem;
+    left: 1.28rem;
+    opacity: 1;
+}
+
+.fly {
+    animation-name: fly;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-play-state: running;
+}
+
+
+/*
+ * ----------
+ * 钱飞出去动画
+ */
+
+@keyframes fly {
+    from {
+        width: 3.7rem;
+        bottom: -3.1rem;
+        left: 1.28rem;
+        opacity: 1;
+    }
+    to {
+        width: 0;
+        bottom: 12rem;
+        left: 3.2rem;
+        opacity: 0.1;
+    }
+}
+
+
+/**
+ * -----------
+ */
+
+.money-ctrl {
+    width: 3.82rem;
+    height: 4.62rem;
+    position: absolute;
+    bottom: 0;
+    left: 1.28rem;
+    opacity: 1;
+}
+
+.slash-hand {
+    height: 1.52rem;
+    width: 2.37rem;
+    position: absolute;
+    bottom: 2.24rem;
+    right: 0.1rem;
+    opacity: 1;
+}
+
+.fade-animation {
+    animation-name: fade;
+    animation-duration: 1.0s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+/* 分数与倒计时 */
+
+.scopeandcountdown {
+    width: 3.84rem;
+    height: 1.06rem;
+    position: absolute;
+    left: 1.43rem;
+    top: 3.72rem;
+    background-image: url(../public/imgs/scopeandcountdown.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.scopeandcountdown>span {
+    position: absolute;
+    top: 0.33rem;
+    font-size: 0.5rem;
+    color: white;
+}
+
+.scope-hundreds {
+    left: 0.22rem;
+}
+
+.scope-tens {
+    left: 1.15rem;
+}
+
+.scope-units {
+    left: 2.06rem;
+}
+
+.countdown {
+    font-size: 0.434rem !important;
+    color: #a47b47 !important;
+    left: 3.08rem;
+    top: 0.38rem !important;
+}
+
+.gaming-title {
+    /*531 217*/
+    width: 5.37rem;
+    height: 2.17rem;
+    font-size: 0;
+    position: absolute;
+    top: 1.45rem;
+    left: 0.55rem;
+}
+
+.gaming-title-item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.title-invisi {
+    visibility: hidden;
+}
+
+
+/**
+ * -----------------------------------------------------------------------------
+ * 游戏结束
+ */
+
+.game-result {
+    width: 100%;
+    height: 11.5rem;
+    background-image: url(../public/imgs/game-result.png);
+    background-size: cover;
+    position: relative;
+}
+
+.result-scope {
+    font-size: 0.75rem;
+    color: #fff;
+    position: absolute;
+    top: 2.57rem;
+    left: 2.1rem;
+}
+
+.result-title {
+    position: relative;
+    top: 3.63rem;
+    text-align: center;
+}
+
+.result-title>p {
+    font-size: 0.23rem;
+    color: #fff;
+}
+
+.scoperank-hint {
+    position: relative;
+    top: 4.10rem;
+    font-size: 0.24rem;
+    color: #d21026;
+    line-height: 0.61rem;
+    height: 0.61rem;
+    margin: 0 auto;
+    text-align: center;
+    width: 4.50rem;
+    background: #fff;
+    border-radius: 0.08rem;
+}
+
+.result-again {
+    position: absolute;
+    width: 1.80rem;
+    height: 1.90rem;
+    left: 1.02rem;
+    top: 6.42rem;
+}
+
+.result-share {
+    position: absolute;
+    position: absolute;
+    width: 1.80rem;
+    height: 1.90rem;
+    right: 0.80rem;
+    top: 6.42rem;
+}
+
+.result-floatmoney {
+    position: absolute;
+    right: 1.32rem;
+    top: 5.72rem;
+    width: 1.05rem;
+    height: 1.18rem;
+    transform: rotate(-110deg);
+}
+
+.result-sharemask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
