@@ -26,20 +26,23 @@ else{
 
 // 根据 openid 获取用户信息
 
-$openid = 'oNcA9w7GJmypTW02EBXCDgbsEobE';
-// $access_token = 'oHi7ur_WSlyrgEzLcbtZOuBV6W7G3dswmctb6t0nIVz8t_Q9yBTFcN-JyX7L0hqX-MIs4TnM-N0wFF9OiJauRIcBQ3jI3krqWE8Dv6ChLKQNXIeADAWGR';
-$url_userinfo = "https://api.weixin.qq.com/cgi-bin/user/info?access_token={$access_token}&openid={$openid}&lang=zh_CN";
+echo $access_token;
 
-$user = file_get_contents($url_userinfo);
+// 用户的openid
+$openid = 'oNcA9w7GJmypTW02EBXCDgbsEobE';
+
+//获取用户信息地址
+
+$url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
+
+$user = file_get_contents($url);
+
 $obj = json_decode($user);
-var_dump($obj);
-echo "<br>";
-// echo $str;
 echo "<table>";
 echo "<tr>
-        <td><img src='{$obj->headimgurl}' style='width: 50px; height: 50px;'/></td>
-        <td>{$obj->nickname}</td>
-        <td>".($obj->sex == 1 ? "男" : "女")."</td>
-        <td>{$obj->city}</td>
-      </tr>";
+  <td><img style='width:50px' src='{$obj->headimgurl}'/></td>
+  <td>{$obj->nickname}</td>
+  <td>".($obj->sex==1?"男":"女")."</td>
+  <td>{$obj->city}</td>
+</tr>";
 echo "</table>";
