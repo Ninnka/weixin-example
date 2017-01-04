@@ -25,8 +25,6 @@ else{
 }
 
 
-// echo $access_token;
-
 // 获取用户列表
 $url = 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='.$access_token;
 
@@ -44,11 +42,7 @@ for($i=0;$i<count($arr);$i++){
 
   $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
 
-
   $user = file_get_contents($url);
-
-  // echo $user;
-  // $str = json_encode($user);
 
   $obj = json_decode($user);
 
