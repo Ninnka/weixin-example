@@ -1,5 +1,5 @@
 <?php
-// $access_token = "";
+$access_token = "";
 $appid = 'wx9e04810f0033f158';
 $secret = 'ff165d3bba903801dd02712c5b57ec8f';
 
@@ -21,7 +21,7 @@ if($data->time < time() - 7000){
   $str = file_get_contents($url);
   $json = json_decode($str);
   $data->access_token = $json->access_token;
-  // $access_token = $json->access_token;
+  $access_token = $json->access_token;
   $data->time = time()+7000;
   $str = json_encode($data);
 
@@ -29,12 +29,14 @@ if($data->time < time() - 7000){
   file_put_contents($filepathsae, $str);
 
   // file_put_contents($filepath, $str);
+}else{
+  $access_token = $data->access_token;
 }
 
 // 根据 openid 获取用户信息
 
 $openid = 'oNcA9w7GJmypTW02EBXCDgbsEobE';
-$access_token = 'oHi7ur_WSlyrgEzLcbtZOuBV6W7G3dswmctb6t0nIVz8t_Q9yBTFcN-JyX7L0hqX-MIs4TnM-N0wFF9OiJauRIcBQ3jI3krqWE8Dv6ChLKQNXIeADAWGR';
+// $access_token = 'oHi7ur_WSlyrgEzLcbtZOuBV6W7G3dswmctb6t0nIVz8t_Q9yBTFcN-JyX7L0hqX-MIs4TnM-N0wFF9OiJauRIcBQ3jI3krqWE8Dv6ChLKQNXIeADAWGR';
 $url_userinfo = "https://api.weixin.qq.com/cgi-bin/user/info?access_token={$access_token}&openid={$openid}&lang=zh_CN";
 
 $data = file_get_contents($url_userinfo);
