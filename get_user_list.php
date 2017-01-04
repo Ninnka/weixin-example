@@ -25,7 +25,7 @@ else{
 }
 
 
-$url_user_list = "https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token=".$access_token;
+$url_user_list = "https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token={$access_token}";
 
 $list = file_get_contents($url_user_list);
 
