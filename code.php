@@ -20,6 +20,8 @@ $json = json_decode($str);
 
 $access_token = $json->access_token;
 $openid = $json->unionid;
+echo "$access_token: ".$access_token;
+echo "$openid: ".$openid;
 
 $url_get_openid = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
 
