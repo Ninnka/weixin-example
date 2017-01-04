@@ -11,7 +11,7 @@ $data = json_decode($str);
 // $access_token = $data->access_token;
 // echo $access_token;
 
-if($data->time < time()){
+if($data->time < time() - 7000){
   $str = file_get_contents($url);
   $json = json_decode($str);
   $data->access_token = $json->access_token;
