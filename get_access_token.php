@@ -28,7 +28,7 @@ else{
 echo $access_token;
 
 // 用户的openid
-$openid = 'oFk2Zw1YOGVPLxzrn7sy3Uc7phzE';
+$openid = 'oNcA9w7GJmypTW02EBXCDgbsEobE';
 
 //获取用户信息地址
 
