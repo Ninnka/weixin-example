@@ -31,8 +31,25 @@ $list = file_get_contents($url_user_list);
 
 $obj = json_decode($list);
 
-var_dump($obj);
+$arr = $obj->data->openid;
 
+for($i = 0; $i < count($arr); $i++){
+   $openid = $arr[$i];
+   $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
+
+   $user = file_get_contents($url);
+
+   $obj= json_decode($user);
+
+   echo "<table>";
+   echo "<tr>
+     <td><img style='width:50px' src='{$obj->headimgurl}'/></td>
+     <td>{$obj->nickname}</td>
+     <td>".($obj->sex==1?"男":"女")."</td>
+     <td>{$obj->city}</td>
+   </tr>";
+   echo "</table>";
+}
 
 
  ?>
