@@ -9,6 +9,7 @@ $filepathsae = "saemc://access_token.txt";
 // $filepath = "access_token.txt";
 
 $str = file_get_contents($filepathsae);
+echo $str;
 
 // $str = file_get_contents($filepath);
 
