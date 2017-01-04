@@ -25,31 +25,39 @@ else{
 }
 
 
-$url_user_list = "https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token={$access_token}";
+// echo $access_token;
 
-$list = file_get_contents($url_user_list);
+// 获取用户列表
+$url = 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='.$access_token;
 
-$obj = json_decode($list);
+$list = file_get_contents($url);
+$listobj = json_decode($list);
+var_dump($listobj);
 
-$arr = $obj->data->openid;
-echo $arr;
-for($i = 0; $i < count($arr); $i++){
-   $openid = $arr[$i];
-   $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
+$arr = $listobj->data->openid;
+echo "<table>";
+for($i=0;$i<count($arr);$i++){
+  // 用户的openid
+  $openid = $arr[$i];
 
-   $user = file_get_contents($url);
+  //获取用户信息地址
 
-   $obj= json_decode($user);
+  $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
 
-   echo "<table>";
-   echo "<tr>
-     <td><img style='width:50px' src='{$obj->headimgurl}'/></td>
-     <td>{$obj->nickname}</td>
-     <td>".($obj->sex==1?"男":"女")."</td>
-     <td>{$obj->city}</td>
-   </tr>";
-   echo "</table>";
+
+  $user = file_get_contents($url);
+
+  // echo $user;
+  // $str = json_encode($user);
+
+  $obj = json_decode($user);
+
+
+  echo "<tr>
+    <td><img style='width:50px' src='{$obj->headimgurl}'/></td>
+    <td>{$obj->nickname}</td>
+    <td>".($obj->sex==1?"男":"女")."</td>
+    <td>{$obj->city}</td>
+  </tr>";
 }
-
-
- ?>
+  echo "</table>";
