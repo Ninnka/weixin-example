@@ -20,7 +20,7 @@ $json = json_decode($str);
 var_dump($json);
 echo "<br>";
 $access_token = $json->access_token;
-$openid = $json->unionid;
+$openid = $json->openid;
 echo "access_token: ".$access_token."<br>";
 echo "openid: ".$openid;
 
