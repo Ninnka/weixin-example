@@ -22,20 +22,20 @@ echo "<br>";
 $access_token = $json->access_token;
 $openid = $json->openid;
 echo "access_token: ".$access_token."<br>";
-echo "openid: ".$openid;
+echo "openid: ".$openid."<br>";
 
 $url_get_openid = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
 
 $user = file_get_contents($url_get_openid);
 
 $obj = json_decode($user);
-
-echo "<table>";
-echo "<tr>
-  <td><img style='width:50px' src='{$obj->headimgurl}'/></td>
-  <td>{$obj->nickname}</td>
-  <td>".($obj->sex==1?"男":"女")."</td>
-  <td>{$obj->city}</td>
-</tr>";
-echo "</table>";
+var_dump($obj);
+// echo "<table>";
+// echo "<tr>
+//   <td><img style='width:50px' src='{$obj->headimgurl}'/></td>
+//   <td>{$obj->nickname}</td>
+//   <td>".($obj->sex==1?"男":"女")."</td>
+//   <td>{$obj->city}</td>
+// </tr>";
+// echo "</table>";
  ?>
