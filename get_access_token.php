@@ -10,7 +10,7 @@ $filepathsae = "saemc://access_token.txt";
 // $filepath = "access_token.txt";
 
 $str = file_get_contents($filepathsae);
-// echo $str;
+echo $str;
 
 // $str = file_get_contents($filepath);
 
@@ -34,7 +34,7 @@ if($data->time < time() - 7000){
 // 根据 openid 获取用户信息
 
 $openid = 'oNcA9w7GJmypTW02EBXCDgbsEobE';
-$access_token = 'c9zvBpqurygHz2T3Cq-pue7Fr-3ehUnH_Su0EcXIPeQG3STsgF7vbgh9jrkyxFvuTYjCHq_z2uz7cfwwlYiFRxZ6QUcU0zCPUKf1Akxp6mzGMpos5ubX6TJY79x3e5vRTWBcAIAHKP';
+$access_token = 'oHi7ur_WSlyrgEzLcbtZOuBV6W7G3dswmctb6t0nIVz8t_Q9yBTFcN-JyX7L0hqX-MIs4TnM-N0wFF9OiJauRIcBQ3jI3krqWE8Dv6ChLKQNXIeADAWGR';
 $url_userinfo = "https://api.weixin.qq.com/cgi-bin/user/info?access_token={$access_token}&openid={$openid}&lang=zh_CN";
 
 $data = file_get_contents($url_userinfo);
