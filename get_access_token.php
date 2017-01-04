@@ -24,12 +24,11 @@ else{
   $access_token = $fileJson->access_token;
 }
 
-// 根据 openid 获取用户信息
 
 echo $access_token;
 
 // 用户的openid
-$openid = 'oNcA9w7GJmypTW02EBXCDgbsEobE';
+$openid = 'oFk2Zw1YOGVPLxzrn7sy3Uc7phzE';
 
 //获取用户信息地址
 
