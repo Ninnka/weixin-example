@@ -8,7 +8,10 @@ $filepathsae = "saemc://access_token.txt";
 
 // $filepath = "access_token.txt";
 
-$str = file_get_contents($filepath);
+$str = file_get_contents($filepathsae);
+
+// $str = file_get_contents($filepath);
+
 $data = json_decode($str);
 
 
