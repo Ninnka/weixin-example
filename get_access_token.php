@@ -8,5 +8,5 @@ $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&app
 $str = file_get_contents($url);
 $json = json_decode($str);
 
-$access_token = $json['access_token'];
+$access_token = $json->access_token;
 echo $access_token;
