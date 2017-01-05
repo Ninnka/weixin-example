@@ -275,7 +275,7 @@ window.addEventListener("load", function () {
   addAgainClickListener();
 
   // 添加分享事件
-  var result_share document.querySelector(".result-share");
+  var result_share = document.querySelector(".result-share");
   result_share.addEventListener("click", function () {
     alert("share");
   });
