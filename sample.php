@@ -141,10 +141,8 @@ $signPackage = $jssdk->GetSignPackage();
 
   var btn_start = document.querySelector("#start");
   var btn_stop = document.querySelector("#stop");
-  // alert(btn_start);
 
   btn_start.addEventListener("click", function(){
-    alert("start");
     wx.startRecord();
     // wx.onVoiceRecordEnd({
     // // 录音时间超过一分钟没有停止的时候会执行 complete 回调
@@ -155,7 +153,6 @@ $signPackage = $jssdk->GetSignPackage();
     // });
   });
   btn_stop.addEventListener("click", function(){
-    alert("stop");
     wx.stopRecord({
       success: function (res) {
           var localId = res.localId;
