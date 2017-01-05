@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
 
-  var addScope_url = "../countmoney_addscope.php";
-  var signUp_url = "";
+  // var addScope_url = "../countmoney_addscope.php";
+  // var signUp_url = "";
 
   // 保存用户信息
   var username;
