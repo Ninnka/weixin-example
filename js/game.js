@@ -45,6 +45,17 @@ window.addEventListener("load", function () {
         // 保存当前点击的导航栏按钮位置
         var nav_pos = $(this)
           .index();
+        if (nav_pos === 1) {
+          $.ajax({
+            type: "GET",
+            url: "http://1.ninnka.applinzi.com/view/countmoney_rank.php",
+            success: function (res) {
+              var data = JSON.parse(res.data);
+              // console.log("res", res);
+              console.log(data);
+            }
+          })
+        }
         currentNav = nav_pos;
         try {
           $(nav_content_wrapper)
