@@ -105,6 +105,8 @@ window.addEventListener("load", function () {
   function addRegisterBtn() {
     game_start_btn.addEventListener("click", function () {
       game_register.classList.remove("item-hidden");
+      register_name.value = username;
+      console.log("username", username);
     });
   }
   addRegisterBtn();
@@ -124,8 +126,7 @@ window.addEventListener("load", function () {
       gaming.classList.remove("item-hidden");
       // username = register_name.value;
       usertel = register_tel.value;
-      register_name.value = username;
-      console.log("username", username);
+
       $.ajax({
         type: "POST",
         url: "http://1.ninnka.applinzi.com/view/countmoney_sign.php",
