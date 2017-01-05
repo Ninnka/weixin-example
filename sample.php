@@ -33,7 +33,7 @@ $signPackage = $jssdk->GetSignPackage();
     signature: '<?php echo $signPackage["signature"];?>',
     jsApiList: [
       // 所有要调用的 API 都要加到这个列表中
-      "getNetworkType"
+      "startRecord", "stopRecord", "onVoiceRecordEnd"
     ]
   });
   wx.ready(function () {
@@ -78,12 +78,49 @@ $signPackage = $jssdk->GetSignPackage();
 
     // wx.showOptionMenu();
 
-    wx.getNetworkType({
+    // wx.getNetworkType({
+    //   success: function (res) {
+    //       var networkType = res.networkType; // 返回网络类型2g，3g，4g，wifi
+    //       alert(networkType);
+    //   }
+    // });
+
+    wx.startRecord();
+
+    wx.stopRecord({
       success: function (res) {
-          var networkType = res.networkType; // 返回网络类型2g，3g，4g，wifi
-          alert(networkType);
+          var localId = res.localId;
+          alert("stop record");
       }
     });
+
+    wx.onVoiceRecordEnd({
+    // 录音时间超过一分钟没有停止的时候会执行 complete 回调
+        complete: function (res) {
+            var localId = res.localId;
+            alert("onVoiceRecordEnd complete");
+
+        }
+    });
+
+    // wx.playVoice({
+    //     localId: '' // 需要播放的音频的本地ID，由stopRecord接口获得
+    // });
+    //
+    // wx.pauseVoice({
+    //     localId: '' // 需要暂停的音频的本地ID，由stopRecord接口获得
+    // });
+    //
+    // wx.stopVoice({
+    //     localId: '' // 需要停止的音频的本地ID，由stopRecord接口获得
+    // });
+    //
+    // wx.onVoicePlayEnd({
+    //     success: function (res) {
+    //         var localId = res.localId; // 返回音频的本地ID
+    //         alert("onVoicePlayEnd success");
+    //     }
+    // });
   });
 </script>
 </html>
