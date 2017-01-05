@@ -18,10 +18,10 @@ window.addEventListener("load", function () {
   var html = document.querySelector("html");
 
   function clientChange() {
-    console.log("resize");
+    // console.log("resize");
     var w = document.documentElement.clientWidth;
     var hfs = Math.round(w / 320 * 50);
-    console.log("hfs", hfs);
+    // console.log("hfs", hfs);
     html.style.fontSize = hfs + "px";
     // if (hfs <= 100) {
     //   html.style.fontSize = hfs + "px";
@@ -42,8 +42,8 @@ window.addEventListener("load", function () {
   function addGameNavClick() {
     $(gameNavs)
       .on("touchstart", function () {
-        console.log("click: ", $(this)
-          .index());
+        // console.log("click: ", $(this)
+        //   .index());
         // 保存当前点击的导航栏按钮位置
         var nav_pos = $(this)
           .index();
@@ -120,7 +120,7 @@ window.addEventListener("load", function () {
    * ---------------------------------------------------------------------------
    * 游戏中部分
    */
-
+  var result_scope = document.querySelector(".result-scope");
   var mountScope = 0;
 
   // 分数位置
@@ -147,9 +147,10 @@ window.addEventListener("load", function () {
 
   function endCountdown() {
     isStart = false;
-    console.log("end countdown");
+    // console.log("end countdown");
     gaming.classList.add("item-hidden");
     game_result.classList.remove("item-hidden");
+    result_scope.innerHTML = mountScope;
   }
 
   function startCountdown() {
@@ -159,15 +160,15 @@ window.addEventListener("load", function () {
       countdown.innerHTML = countdownNumber;
       if (countdown.innerHTML === "00") {
         clearInterval(countdownTimer);
-        endCountdown();
         storeScope();
+        endCountdown();
       }
     }, 1000);
   }
 
   function storeScope() {
     mountScope = scopeHundreds.innerHTML + scopeTens.innerHTML + scopeUnits.innerHTML;
-    console.log("mountScope", mountScope);
+    // console.log("mountScope", mountScope);
     $.ajax({
       type: "POST",
       url: "http://1.ninnka.applinzi.com/view/countmoney_addscope.php",
@@ -233,7 +234,7 @@ window.addEventListener("load", function () {
   // 控制钱飞的动画
   function moneyFly() {
     for (var i = moneys.length - 1; i >= 0; i--) {
-      console.log("in moneyFly: ", i);
+      // console.log("in moneyFly: ", i);
       if (!$(moneys[i])
         .hasClass("fly")) {
         moneys[i].classList.add("fly");
