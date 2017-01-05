@@ -256,7 +256,7 @@ $signPackage = $jssdk->GetSignPackage();
     	      title: '数钱赢大奖', // 分享标题
     	      desc: '数钱赢大奖', // 分享描述
     	      link: 'http://1.ninnka.applinzi.com/view/game.php', // 分享链接
-    	      imgUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=827020255,4071626112&fm=21&gp=0.jpg', // 分享图标
+    	      imgUrl: '<?php echo $obj["headimgurl"] ?>', // 分享图标
     	      type: 'link', // 分享类型,music、video或link，不填默认为link
     	      dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
     	      success: function () {
