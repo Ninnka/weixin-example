@@ -42,15 +42,11 @@ window.addEventListener("load", function () {
   function addGameNavClick() {
     $(gameNavs)
       .on("touchstart", function () {
-        // console.log("click: ", $(this)
-        //   .index());
         // 保存当前点击的导航栏按钮位置
         var nav_pos = $(this)
           .index();
         currentNav = nav_pos;
         try {
-          // nav_content_wrapper.classList.remove("item-hidden");
-          // btn_close.classList.remove("item-hidden");
           $(nav_content_wrapper)
             .removeClass("item-hidden");
           $(btn_close)
