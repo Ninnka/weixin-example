@@ -254,7 +254,7 @@ $signPackage = $jssdk->GetSignPackage();
           // 添加分享事件
           var result_share = document.querySelector(".result-share");
           result_share.addEventListener("click", function () {
-            // alert("share");
+            alert("share");
             var headimgurl = '<?php echo $obj->headimgurl;?>';
             var nickname = '<?php echo $obj->nickname;?>';
 
