@@ -145,19 +145,39 @@ html {
     width: 5.52rem;
     height: 1.63rem;
     position: absolute;
-    /*top: 1.4rem;
-    left: 0.25rem;*/
     opacity: 0;
     animation-name: challenge_fade;
     animation-duration: 1.2s;
     animation-delay: 0.3s;
     animation-timing-function: ease-in;
-    animation-direction: normal;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    -webkit-animation-name: challenge_fade;
+    -webkit-animation-duration: 1.2s;
+    -webkit-animation-delay: 0.3s;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
 }
 
 @keyframes challenge_fade {
+    from {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        top: 3rem;
+        left: 3.2rem;
+    }
+    to {
+        opacity: 1;
+        width: 5.52rem;
+        height: 1.63rem;
+        top: 1.4rem;
+        left: 0.25rem;
+    }
+}
+
+@-webkit-keyframes challenge_fade {
     from {
         opacity: 0;
         width: 0;
@@ -183,14 +203,41 @@ html {
     animation-name: challenge_shake;
     animation-duration: 0.8s;
     animation-timing-function: linear;
-    animation-direction: normal;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     transform-origin: center center;
     transform: rotate(10deg);
+    -webkit-animation-name: challenge_shake;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(10deg);
 }
 
 @keyframes challenge_shake {
+    0% {
+        transform: rotate(10deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    80% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes challenge_shake {
     0% {
         transform: rotate(10deg);
     }
