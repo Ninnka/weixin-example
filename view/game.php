@@ -267,8 +267,10 @@ $signPackage = $jssdk->GetSignPackage();
     	      }
     	  	});
 
+            var username = '<?php echo $obj->nickname;?>';
+
     	  });
-          var username = '<?php echo $obj->nickname;?>';
+
 
     </script>
     <script src="../js/game.js" charset="utf-8"></script>
