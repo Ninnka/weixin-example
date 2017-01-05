@@ -150,7 +150,7 @@ window.addEventListener("load", function () {
     // console.log("end countdown");
     gaming.classList.add("item-hidden");
     game_result.classList.remove("item-hidden");
-    result_scope.innerHTML = mountScope;
+    result_scope.innerHTML = "￥ " + mountScope;
   }
 
   function startCountdown() {
