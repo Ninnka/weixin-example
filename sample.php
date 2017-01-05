@@ -136,19 +136,15 @@ $signPackage = $jssdk->GetSignPackage();
     // });
 
   });
-
-  // var btn_start = document.querySelector("#start");
-  // var btn_stop = document.querySelector("#stop");
-
   document.querySelector("#start").onclick = function(){
     wx.startRecord();
-    // wx.onVoiceRecordEnd({
-    // // 录音时间超过一分钟没有停止的时候会执行 complete 回调
-    //     complete: function (res) {
-    //         var localId = res.localId;
-    //         alert("onVoiceRecordEnd complete");
-    //     }
-    // });
+    wx.onVoiceRecordEnd({
+    // 录音时间超过一分钟没有停止的时候会执行 complete 回调
+        complete: function (res) {
+            var localId = res.localId;
+            alert("onVoiceRecordEnd complete");
+        }
+    });
   }
   document.querySelector("#stop").onclick = function(){
     wx.stopRecord({
