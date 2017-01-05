@@ -252,33 +252,49 @@ $signPackage = $jssdk->GetSignPackage();
         });
 
         wx.ready(function() {
-
+            var headimgurl = '<?php echo $obj->headimgurl;?>';
+            wx.onMenuShareAppMessage({
+              title: '钱!钱!!钱!!!', // 分享标题
+              desc: '我拿了 ￥ '+mountScope, // 分享描述
+              link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9e04810f0033f158&redirect_uri=http%3A%2F%2F1.ninnka.applinzi.com%2Fview%2Fgame.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect', // 分享链接
+              imgUrl: headimgurl, // 分享图标
+              type: '', // 分享类型,music、video或link，不填默认为link
+              dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+              success: function () {
+                  // 用户确认分享后执行的回调函数
+                //   console.log("success");
+              },
+              cancel: function () {
+                  // 用户取消分享后执行的回调函数
+                //   console.log("cancel");
+              }
+            });
         });
 
         // 添加分享事件
-        var result_share = document.querySelector(".result-share");
-        result_share.addEventListener("click", function () {
-          // alert("share");
-          var headimgurl = '<?php echo $obj->headimgurl;?>';
-          alert("headimgurl: "+headimgurl);
-
-          wx.onMenuShareAppMessage({
-            title: '钱!钱!!钱!!!', // 分享标题
-            desc: '我拿了 ￥ '+mountScope, // 分享描述
-            link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9e04810f0033f158&redirect_uri=http%3A%2F%2F1.ninnka.applinzi.com%2Fview%2Fgame.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect', // 分享链接
-            imgUrl: headimgurl, // 分享图标
-            type: '', // 分享类型,music、video或link，不填默认为link
-            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-            success: function () {
-                // 用户确认分享后执行的回调函数
-              //   console.log("success");
-            },
-            cancel: function () {
-                // 用户取消分享后执行的回调函数
-              //   console.log("cancel");
-            }
-          });
-        });
+        // var result_share = document.querySelector(".result-share");
+        // result_share.addEventListener("click", function () {
+        //   // alert("share");
+        //   var headimgurl = '<?php echo $obj->headimgurl;?>';
+        //   alert("headimgurl: "+headimgurl);
+        //
+        //   wx.onMenuShareAppMessage({
+        //     title: '钱!钱!!钱!!!', // 分享标题
+        //     desc: '我拿了 ￥ '+mountScope, // 分享描述
+        //     link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9e04810f0033f158&redirect_uri=http%3A%2F%2F1.ninnka.applinzi.com%2Fview%2Fgame.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect', // 分享链接
+        //     imgUrl: headimgurl, // 分享图标
+        //     type: '', // 分享类型,music、video或link，不填默认为link
+        //     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+        //     success: function () {
+        //         // 用户确认分享后执行的回调函数
+        //       //   console.log("success");
+        //     },
+        //     cancel: function () {
+        //         // 用户取消分享后执行的回调函数
+        //       //   console.log("cancel");
+        //     }
+        //   });
+        // });
 
     </script>
     <script src="../js/game.js" charset="utf-8"></script>
