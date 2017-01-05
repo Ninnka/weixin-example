@@ -49,8 +49,12 @@ window.addEventListener("load", function () {
           .index();
         currentNav = nav_pos;
         try {
-          nav_content_wrapper.classList.remove("item-hidden");
-          btn_close.classList.remove("item-hidden");
+          // nav_content_wrapper.classList.remove("item-hidden");
+          // btn_close.classList.remove("item-hidden");
+          $(nav_content_wrapper)
+            .removeClass("item-hidden");
+          $(btn_close)
+            .removeClass("item-hidden");
         } catch (e) {
           console.log(e);
         }
