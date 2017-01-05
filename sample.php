@@ -35,29 +35,9 @@ $signPackage = $jssdk->GetSignPackage();
    * 邮件主题：【微信JS-SDK反馈】具体问题
    * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
    */
-   window.onload = function(){
-     var btn_start = document.getElementById("start");
-     var btn_stop = document.getElementById("stop");
-
-     btn_start.addEventListener("click", function(){
-       wx.startRecord();
-       wx.onVoiceRecordEnd({
-       // 录音时间超过一分钟没有停止的时候会执行 complete 回调
-           complete: function (res) {
-               var localId = res.localId;
-               alert("onVoiceRecordEnd complete");
-           }
-       });
-     });
-     btn_stop.addEventListener("click", function(){
-       wx.stopRecord({
-         success: function (res) {
-             var localId = res.localId;
-             alert("stop record");
-         }
-       });
-     });
-   }
+  //  window.onload = function(){
+  //
+  //  }
 
   wx.config({
     debug: true,
@@ -154,6 +134,29 @@ $signPackage = $jssdk->GetSignPackage();
     //         alert("onVoicePlayEnd success");
     //     }
     // });
+
+    var btn_start = document.getElementById("start");
+    var btn_stop = document.getElementById("stop");
+
+    btn_start.addEventListener("click", function(){
+      wx.startRecord();
+      wx.onVoiceRecordEnd({
+      // 录音时间超过一分钟没有停止的时候会执行 complete 回调
+          complete: function (res) {
+              var localId = res.localId;
+              alert("onVoiceRecordEnd complete");
+          }
+      });
+    });
+    btn_stop.addEventListener("click", function(){
+      wx.stopRecord({
+        success: function (res) {
+            var localId = res.localId;
+            alert("stop record");
+        }
+      });
+    });
+    
   });
 </script>
 </html>
