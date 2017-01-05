@@ -33,6 +33,7 @@ $signPackage = $jssdk->GetSignPackage();
     signature: '<?php echo $signPackage["signature"];?>',
     jsApiList: [
       // 所有要调用的 API 都要加到这个列表中
+      "onMenuShareAppMessage"
     ]
   });
   wx.ready(function () {
