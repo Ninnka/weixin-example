@@ -15,7 +15,7 @@ if(mysqli_affected_rows($conn) > 0){
   echo json_encode(array("data"=>$arr));
   // var_dump($arr);
 }else {
-  echo "fail";
+  echo '"data": "err"';
 }
 
  ?>

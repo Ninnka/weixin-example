@@ -49,10 +49,11 @@ window.addEventListener("load", function () {
           $.ajax({
             type: "GET",
             url: "http://1.ninnka.applinzi.com/view/countmoney_rank.php",
+            dataType: "json",
             success: function (res) {
-              var data = JSON.parse(res.data);
+              // var data = JSON.parse(res.data);
               // console.log("res", res);
-              console.log(data);
+              console.log(res);
             }
           })
         }
