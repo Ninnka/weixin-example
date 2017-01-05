@@ -38,7 +38,9 @@ $signPackage = $jssdk->GetSignPackage();
   //  window.onload = function(){
   //
   //  }
-
+  var btn_start = document.querySelector("#start");
+  var btn_stop = document.querySelector("#stop");
+  alert(btn_start);
   wx.config({
     debug: true,
     appId: '<?php echo $signPackage["appId"];?>',
