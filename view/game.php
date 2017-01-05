@@ -11,11 +11,11 @@ $str = file_get_contents($url_get_token);
 
 $json = json_decode($str);
 var_dump($json);
-echo "<br>";
+// echo "<br>";
 $access_token = $json->access_token;
 $openid = $json->openid;
-echo "access_token: ".$access_token."<br>";
-echo "openid: ".$openid."<br>";
+// echo "access_token: ".$access_token."<br>";
+// echo "openid: ".$openid."<br>";
 
 $url_get_openid = 'https://api.weixin.qq.com/sns/userinfo?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
 
@@ -238,8 +238,9 @@ $signPackage = $jssdk->GetSignPackage();
 
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script type="text/javascript">
+        console.log("code: ", $code);
         wx.config({
-            debug: true,
+            debug: false,
             appId: '<?php echo $signPackage["appId"];?>',
             timestamp: <?php echo $signPackage["timestamp"];?>,
             nonceStr: '<?php echo $signPackage["nonceStr"];?>',
@@ -251,7 +252,7 @@ $signPackage = $jssdk->GetSignPackage();
         });
 
         wx.ready(function() {
-            console.log("code: ", $code);
+
         });
 
     </script>
