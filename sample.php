@@ -135,14 +135,12 @@ $signPackage = $jssdk->GetSignPackage();
     //     }
     // });
 
-
-
   });
 
-  var btn_start = document.querySelector("#start");
-  var btn_stop = document.querySelector("#stop");
+  // var btn_start = document.querySelector("#start");
+  // var btn_stop = document.querySelector("#stop");
 
-  btn_start.addEventListener("click", function(){
+  document.querySelector("#start").onclick = function(){
     wx.startRecord();
     // wx.onVoiceRecordEnd({
     // // 录音时间超过一分钟没有停止的时候会执行 complete 回调
@@ -151,14 +149,14 @@ $signPackage = $jssdk->GetSignPackage();
     //         alert("onVoiceRecordEnd complete");
     //     }
     // });
-  });
-  btn_stop.addEventListener("click", function(){
+  }
+  document.querySelector("#stop").onclick = function(){
     wx.stopRecord({
       success: function (res) {
           var localId = res.localId;
           alert("stop record");
       }
     });
-  });
+  }
 </script>
 </html>
