@@ -267,10 +267,12 @@ $signPackage = $jssdk->GetSignPackage();
     	      }
     	  	});
 
+            var un = '<?php echo $obj->nickname;?>';
+            console.log("un", un);
+
+
     	  });
 
-          var un = '<?php echo $obj->nickname;?>';
-          console.log("un", un);
 
 
     </script>
