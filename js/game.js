@@ -42,6 +42,7 @@ window.addEventListener("load", function () {
   // 排行榜的子项
   var rank_item_names = document.querySelectorAll(".rank-username");
   var rank_item_scopes = document.querySelectorAll(".rank-scope");
+  var rank_item_avatars = document.querySelectorAll(".rank-avatar");
 
   function addGameNavClick() {
     $(gameNavs)
@@ -60,6 +61,7 @@ window.addEventListener("load", function () {
               for (var i = 0; i < data.length; i++) {
                 rank_item_names[i].innerHTML = data[i].username;
                 rank_item_scopes[i].innerHTML = data[i].userscope + "分";
+                rank_item_avatars[i].src = data[i].useravatar;
               }
             }
           })
