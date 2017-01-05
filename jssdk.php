@@ -106,8 +106,8 @@ class JSSDK {
   }
   private function set_php_file($filename, $content) {
     file_put_contents("saemc://".$filename, $content);
-    $fp = fopen($filename, "w");
+    /*$fp = fopen($filename, "w");
     fwrite($fp, "<?php exit();?>" . $content);
-    fclose($fp);
+    fclose($fp);*/
   }
 }
