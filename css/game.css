@@ -505,21 +505,21 @@ html {
 
 .money {
     width: 3.7rem;
-    /*height: 4.62rem;*/
     position: absolute;
     bottom: -3.1rem;
     left: 1.28rem;
     opacity: 1;
+    transform: translateY(0) scale(1.0);
+    -webkit-transform: translateY(0) scale(1.0);
 }
 
 .fly {
     animation-name: fly;
     animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
     animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-play-state: running;
+    -webkit-animation-name: fly;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
 }
 
 
@@ -530,11 +530,11 @@ html {
 
 @keyframes fly {
     from {
-        -webkit-transform: translateY(0) scale(1.0);
+        transform: translateY(0) scale(1.0);
         opacity: 1;
     }
     to {
-        -webkit-transform: translateY(-15rem) scale(0.1);
+        transform: translateY(-15rem) scale(0.1);
         opacity: 0.1;
     }
 }
