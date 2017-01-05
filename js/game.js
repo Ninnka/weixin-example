@@ -98,7 +98,7 @@ window.addEventListener("load", function () {
       usertel = register_tel.value;
       $.ajax({
         type: "POST",
-        url: "http://localhost:8888/countmoney/view/countmoney_sign.php",
+        url: "http://1.ninnka.applinzi.com/view/countmoney_sign.php",
         data: {
           name: username,
           tel: usertel
@@ -170,7 +170,7 @@ window.addEventListener("load", function () {
     console.log("mountScope", mountScope);
     $.ajax({
       type: "POST",
-      url: "countmoney_addscope.php",
+      url: "http://1.ninnka.applinzi.com/view/countmoney_addscope.php",
       data: {
         name: username,
         scope: mountScope

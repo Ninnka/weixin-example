@@ -9,7 +9,7 @@
 $name = $_POST["name"];
 $scope = $_POST["scope"];
 // echo "ok";
-// $conn = @mysqli_connect("SAE_MYSQL_HOST_M", "SAE_MYSQL_USER", "SAE_MYSQL_PASS", "SAE_MYSQL_DB", "SAE_MYSQL_PORT");
+$conn = mysqli_connect(SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS,SAE_MYSQL_DB);
 
 $conn->query("set names uft8");
 $queryUser = "select * from countmoney where username='{$name}'";

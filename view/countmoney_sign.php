@@ -6,29 +6,26 @@
  * Time: 上午10:36
  */
 
-// $name = $_POST["name"];
-// $tel = $_POST["tel"];
+$name = $_POST["name"];
+$tel = $_POST["tel"];
 // echo "ok";
-// $conn = mysqli_connect("w.rdc.sae.sina.com.cn".":"."3307",'hennzr@gmail.com',"665396","app_ninnka");
-// $conn = mysqli_connect(SAE_MYSQL_HOST_M, SAE_MYSQL_USER, SAE_MYSQL_PASS, SAE_MYSQL_DB, SAE_MYSQL_PORT);
 $conn = mysqli_connect(SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS,SAE_MYSQL_DB);
-// mysql_select_db(SAE_MYSQL_DB, $conn);
 
 $conn->query("set names uft8");
-// $queryUser = "select * from countmoney where username='{$name}'";
-// $sign = "insert into countmoney(username, usertel) VALUES ('{$name}','{$tel}')";
+$queryUser = "select * from countmoney where username='{$name}'";
+$sign = "insert into countmoney(username, usertel) VALUES ('{$name}','{$tel}')";
 
-$queryUser = "select * from countmoney";
+// $queryUser = "select * from countmoney";
 
 $res = $conn->query($queryUser);
 
-var_dump($res);
+// var_dump($res);
 
-// if(mysqli_affected_rows($conn) > 0){
-// //    $conn->query($updateScope);
-// //    echo "success add";
-//     echo "登录成功";
-// }else{
-//     $conn->query($sign);
-//     echo "注册成功并登录";
-// }
+if(mysqli_affected_rows($conn) > 0){
+//    $conn->query($updateScope);
+//    echo "success add";
+    echo "登录成功";
+}else{
+    $conn->query($sign);
+    echo "注册成功并登录";
+}
