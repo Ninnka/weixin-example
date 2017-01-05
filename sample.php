@@ -135,10 +135,6 @@ $signPackage = $jssdk->GetSignPackage();
     //     }
     // });
 
-    // var btn_start = document.querySelector("#start");
-    // var btn_stop = document.querySelector("#stop");
-    // alert(btn_start);
-
     var btn_start = document.querySelector("#start");
     var btn_stop = document.querySelector("#stop");
     // alert(btn_start);
@@ -146,13 +142,13 @@ $signPackage = $jssdk->GetSignPackage();
     btn_start.addEventListener("click", function(){
       alert("start");
       wx.startRecord();
-      wx.onVoiceRecordEnd({
-      // 录音时间超过一分钟没有停止的时候会执行 complete 回调
-          complete: function (res) {
-              var localId = res.localId;
-              alert("onVoiceRecordEnd complete");
-          }
-      });
+      // wx.onVoiceRecordEnd({
+      // // 录音时间超过一分钟没有停止的时候会执行 complete 回调
+      //     complete: function (res) {
+      //         var localId = res.localId;
+      //         alert("onVoiceRecordEnd complete");
+      //     }
+      // });
     });
     btn_stop.addEventListener("click", function(){
       alert("stop");
