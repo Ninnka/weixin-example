@@ -269,8 +269,8 @@ $signPackage = $jssdk->GetSignPackage();
 
     	  });
 
-          var un = '<?php echo $obj->nickname;?>';
-          alert("un: "+un);
+          var username = '<?php echo $obj->nickname;?>';
+        //   alert("un: "+un);
 
     </script>
     <script src="../js/game.js" charset="utf-8"></script>

@@ -4,7 +4,7 @@ window.addEventListener("load", function () {
   // var signUp_url = "";
 
   // 保存用户信息
-  var username;
+  // var username;
   var usertel;
   var register_name = document.querySelector("input[name=name]");
   var register_tel = document.querySelector("input[name=tel]");
@@ -105,7 +105,7 @@ window.addEventListener("load", function () {
   function addRegisterBtn() {
     game_start_btn.addEventListener("click", function () {
       game_register.classList.remove("item-hidden");
-      // register_name.value = username;
+      register_name.value = username;
       // console.log("username", username);
     });
   }
@@ -124,7 +124,7 @@ window.addEventListener("load", function () {
       game_register.classList.add("item-hidden");
       game_wrapper.classList.add("item-hidden");
       gaming.classList.remove("item-hidden");
-      username = register_name.value;
+      // username = register_name.value;
       usertel = register_tel.value;
 
       $.ajax({
