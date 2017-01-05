@@ -530,28 +530,25 @@ html {
 
 @keyframes fly {
     from {
-        transform: translateY(0) scale(1.0);
+        -webkit-transform: translateY(0) scale(1.0);
         opacity: 1;
     }
     to {
-        transform: translateY(-15rem) scale(0.1);
+        -webkit-transform: translateY(-15rem) scale(0.1);
         opacity: 0.1;
     }
 }
 
-
-/*@-webkit-keyframes fly {
+@-webkit-keyframes fly {
     from {
-
-        transform: translateY(0) scale(1.0);
+        -webkit-transform: translateY(0) scale(1.0);
         opacity: 1;
     }
     to {
-
-        transform: translateY(-15rem) scale(0.1);
+        -webkit-transform: translateY(-15rem) scale(0.1);
         opacity: 0.1;
     }
-}*/
+}
 
 
 /**
