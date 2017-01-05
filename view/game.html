@@ -1,3 +1,8 @@
+<!-- <?php
+require_once "jssdk.php";
+$jssdk = new JSSDK("wx9e04810f0033f158", "ff165d3bba903801dd02712c5b57ec8f");
+$signPackage = $jssdk->GetSignPackage();
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -201,8 +206,30 @@
                 <img src="../public/imgs/share-bg.png" alt="" class="result-sharemask">
             </div>
         </div>
-        <script src="../js/jquery-3.1.1.min.js" charset="utf-8"></script>
-        <script src="../js/game.js" charset="utf-8"></script>
+
     </body>
+
+    <script src="../js/jquery-3.1.1.min.js" charset="utf-8"></script>
+
+    <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        wx.config({
+            debug: true,
+            appId: '<?php echo $signPackage["appId"];?>',
+            timestamp: <?php echo $signPackage["timestamp"];?>,
+            nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+            signature: '<?php echo $signPackage["signature"];?>',
+            jsApiList: [
+                // 所有要调用的 API 都要加到这个列表中
+                "startRecord", "stopRecord", "onVoiceRecordEnd", "playVoice", "pauseVoice", "onVoicePlayEnd"
+            ]
+        });
+
+        wx.ready(function() {
+
+        });
+
+    </script> -->
+    <script src="../js/game.js" charset="utf-8"></script>
 
 </html>
