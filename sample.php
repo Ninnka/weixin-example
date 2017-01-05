@@ -87,21 +87,20 @@ $signPackage = $jssdk->GetSignPackage();
 
     wx.startRecord();
 
-    wx.stopRecord({
-      success: function (res) {
-          var localId = res.localId;
-          alert("stop record");
-      }
-    });
+    // wx.stopRecord({
+    //   success: function (res) {
+    //       var localId = res.localId;
+    //       alert("stop record");
+    //   }
+    // });
 
-    wx.onVoiceRecordEnd({
-    // 录音时间超过一分钟没有停止的时候会执行 complete 回调
-        complete: function (res) {
-            var localId = res.localId;
-            alert("onVoiceRecordEnd complete");
-
-        }
-    });
+    // wx.onVoiceRecordEnd({
+    // // 录音时间超过一分钟没有停止的时候会执行 complete 回调
+    //     complete: function (res) {
+    //         var localId = res.localId;
+    //         alert("onVoiceRecordEnd complete");
+    //     }
+    // });
 
     // wx.playVoice({
     //     localId: '' // 需要播放的音频的本地ID，由stopRecord接口获得
