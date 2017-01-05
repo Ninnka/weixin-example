@@ -238,9 +238,9 @@ window.addEventListener("load", function () {
   // 控制钱飞的动画
   function moneyFly() {
     for (var i = moneys.length - 1; i >= 0; i--) {
-      // console.log("in moneyFly: ", i);
       if (!$(moneys[i])
         .hasClass("fly")) {
+        alert("no fly class: " + i);
         moneys[i].classList.add("fly");
         moneys[i].timer = setTimeout((function (i) {
           return function () {
@@ -273,5 +273,11 @@ window.addEventListener("load", function () {
     });
   }
   addAgainClickListener();
+
+  // 添加分享事件
+  var result_share document.querySelector(".result-share");
+  result_share.addEventListener("click", function () {
+    alert("share");
+  });
 
 });
