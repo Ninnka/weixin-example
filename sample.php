@@ -51,7 +51,7 @@ $signPackage = $jssdk->GetSignPackage();
     signature: '<?php echo $signPackage["signature"];?>',
     jsApiList: [
       // 所有要调用的 API 都要加到这个列表中
-      "startRecord", "stopRecord", "onVoiceRecordEnd", "playVoice", "pauseVoice"
+      "startRecord", "stopRecord", "onVoiceRecordEnd", "playVoice", "pauseVoice", "onVoicePlayEnd"
     ]
   });
   wx.ready(function () {
@@ -140,7 +140,7 @@ $signPackage = $jssdk->GetSignPackage();
     // });
 
   });
-  var currentVoiceId;
+  var currentVoiceId = "";
   document.querySelector("#start").onclick = function(){
     wx.startRecord();
     wx.onVoiceRecordEnd({
@@ -148,7 +148,7 @@ $signPackage = $jssdk->GetSignPackage();
         complete: function (res) {
             var localId = res.localId;
             currentVoiceId = res.localId;
-            alert("onVoiceRecordEnd complete");
+            // alert("onVoiceRecordEnd complete");
         }
     });
   }
@@ -157,7 +157,7 @@ $signPackage = $jssdk->GetSignPackage();
       success: function (res) {
           var localId = res.localId;
           currentVoiceId = res.localId;
-          alert("stop record");
+          // alert("stop record");
           wx.playVoice({
               localId: localId // 需要播放的音频的本地ID，由stopRecord接口获得
           });
@@ -165,9 +165,17 @@ $signPackage = $jssdk->GetSignPackage();
     });
   }
   document.querySelector("#startplay").onclick = function(){
-    wx.playVoice({
-        localId: currentVoiceId // 需要播放的音频的本地ID，由stopRecord接口获得
-    });
+    if(currentVoiceId !== ""){
+      wx.playVoice({
+          localId: currentVoiceId // 需要播放的音频的本地ID，由stopRecord接口获得
+      });
+      wx.onVoicePlayEnd({
+          success: function (res) {
+              var localId = res.localId; // 返回音频的本地ID
+          }
+      });
+    }
+
   }
   document.querySelector("#stopplay").onclick = function(){
     wx.pauseVoice({

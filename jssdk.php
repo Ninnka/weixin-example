@@ -102,7 +102,7 @@ class JSSDK {
   }
 
   private function get_php_file($filename) {
-    return trim(substr(file_get_contents("saemc://".$filename)));
+    return trim(substr(file_get_contents("saemc://".$filename),0));
   }
   private function set_php_file($filename, $content) {
     file_put_contents("saemc://".$filename, $content);
