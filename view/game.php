@@ -262,22 +262,32 @@ $signPackage = $jssdk->GetSignPackage();
           var nickname = '<?php echo $obj->nickname;?>';
           alert("headimgurl: "+headimgurl);
 
-          wx.onMenuShareAppMessage({
-            title: '钱!钱!!钱!!!', // 分享标题
-            desc: '我拿了 ￥ '+mountScope, // 分享描述
-            link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9e04810f0033f158&redirect_uri=http%3A%2F%2F1.ninnka.applinzi.com%2Fview%2Fgame.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect', // 分享链接
-            imgUrl: headimgurl, // 分享图标
-            type: '', // 分享类型,music、video或link，不填默认为link
-            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-            success: function () {
-                // 用户确认分享后执行的回调函数
-              //   console.log("success");
-            },
-            cancel: function () {
-                // 用户取消分享后执行的回调函数
-              //   console.log("cancel");
-            }
-          });
+        //   wx.onMenuShareAppMessage({
+        //     title: '钱!钱!!钱!!!', // 分享标题
+        //     desc: '我拿了 ￥ '+mountScope, // 分享描述
+        //     link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9e04810f0033f158&redirect_uri=http%3A%2F%2F1.ninnka.applinzi.com%2Fview%2Fgame.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect', // 分享链接
+        //     imgUrl: headimgurl, // 分享图标
+        //     type: '', // 分享类型,music、video或link，不填默认为link
+        //     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+        //     success: function () {
+        //         // 用户确认分享后执行的回调函数
+        //       //   console.log("success");
+        //     },
+        //     cancel: function () {
+        //         // 用户取消分享后执行的回调函数
+        //       //   console.log("cancel");
+        //     }
+        //   });
+            wx.getLocation({
+              type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+              success: function (res) {
+                  var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                  var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                  var speed = res.speed; // 速度，以米/每秒计
+                  var accuracy = res.accuracy; // 位置精度
+                  alert(latitude,longitude,speed,accuracy);
+              }
+            });
         });
 
     </script>
