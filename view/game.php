@@ -1,4 +1,29 @@
 <?php
+// 获取code值
+$code = $_GET["code"];
+
+$appid = 'wx9e04810f0033f158';
+$secret = 'ff165d3bba903801dd02712c5b57ec8f';
+
+$url_get_token = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='.$appid.'&secret='.$secret.'&code='.$code.'&grant_type=authorization_code';
+
+$str = file_get_contents($url_get_token);
+
+$json = json_decode($str);
+var_dump($json);
+echo "<br>";
+$access_token = $json->access_token;
+$openid = $json->openid;
+echo "access_token: ".$access_token."<br>";
+echo "openid: ".$openid."<br>";
+
+$url_get_openid = 'https://api.weixin.qq.com/sns/userinfo?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
+
+$user = file_get_contents($url_get_openid);
+
+$obj = json_decode($user);
+
+
 require_once "jssdk.php";
 $jssdk = new JSSDK("wx9e04810f0033f158", "ff165d3bba903801dd02712c5b57ec8f");
 $signPackage = $jssdk->GetSignPackage();
@@ -226,7 +251,7 @@ $signPackage = $jssdk->GetSignPackage();
         });
 
         wx.ready(function() {
-
+            console.log("code: ", $code);
         });
 
     </script>
