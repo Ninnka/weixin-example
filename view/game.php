@@ -158,6 +158,7 @@ $signPackage = $jssdk->GetSignPackage();
                 </div>
 
                 <div class="game-register item-hidden">
+                    <div class="button-close item-hidden" id="btn_close_register"></div>
                     <div class="game-register-content">
                         <img src="../public/imgs/register-title.png" alt="" class="register-title">
                         <div class="empty"></div>

@@ -107,6 +107,12 @@ window.addEventListener("load", function () {
   }
   addRegisterBtn();
 
+  // 关闭注册页面
+  var btn_close_register = document.querySelector("#btn_close_register");
+  btn_close_register.addEventListener("click", function () {
+    game_register.classList.add("item-hidden");
+  });
+
   // 添加进入游戏界面事件
   function addStartBtn() {
     register_gamestart.addEventListener("click", function () {
