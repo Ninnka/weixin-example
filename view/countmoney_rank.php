@@ -12,7 +12,8 @@ if(mysqli_affected_rows($conn) > 0){
   for($i = 0; $i < 5; $i++){
     $arr[] = mysqli_fetch_row($res);
   }
-  var_dump($arr);
+  echo json_encode(array("json"=>$arr));
+  // var_dump($arr);
 }else {
   echo "fail";
 }
