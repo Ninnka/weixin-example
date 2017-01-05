@@ -33,25 +33,35 @@ $signPackage = $jssdk->GetSignPackage();
     signature: '<?php echo $signPackage["signature"];?>',
     jsApiList: [
       // 所有要调用的 API 都要加到这个列表中
-      "onMenuShareAppMessage"
+      "chooseImage"
     ]
   });
   wx.ready(function () {
     // 在这里调用 API
-    wx.onMenuShareAppMessage({
-      title: '分享测试', // 分享标题
-      desc: '分享测试', // 分享描述
-      link: 'http://1.ninnka.applinzi.com/view/game.html', // 分享链接
-      imgUrl: 'http://wx.qlogo.cn/mmopen/LF5wMia79of1PuMAfmuqApDvhdhXZ3wMFG6XeWM9S9zGSnZwkLXwMWrKoj6Kic2wlePODpakxyibL3nODlLb50S9StyQUdabDwI/0', // 分享图标
-      type: '', // 分享类型,music、video或link，不填默认为link
-      dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-      success: function () {
-          // 用户确认分享后执行的回调函数
-          console.log("success");
-      },
-      cancel: function () {
-          // 用户取消分享后执行的回调函数
-          console.log("cancel");
+    // wx.onMenuShareAppMessage({
+    //   title: '分享测试', // 分享标题
+    //   desc: '分享测试', // 分享描述
+    //   link: 'http://1.ninnka.applinzi.com/view/game.html', // 分享链接
+    //   imgUrl: 'http://wx.qlogo.cn/mmopen/LF5wMia79of1PuMAfmuqApDvhdhXZ3wMFG6XeWM9S9zGSnZwkLXwMWrKoj6Kic2wlePODpakxyibL3nODlLb50S9StyQUdabDwI/0', // 分享图标
+    //   type: '', // 分享类型,music、video或link，不填默认为link
+    //   dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+    //   success: function () {
+    //       // 用户确认分享后执行的回调函数
+    //       console.log("success");
+    //   },
+    //   cancel: function () {
+    //       // 用户取消分享后执行的回调函数
+    //       console.log("cancel");
+    //   }
+    // });
+
+    wx.chooseImage({
+      count: 1, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+          var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+          alert("success");
       }
     });
   });
