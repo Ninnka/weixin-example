@@ -246,7 +246,7 @@ $signPackage = $jssdk->GetSignPackage();
             signature: '<?php echo $signPackage["signature"];?>',
             jsApiList: [
                 // 所有要调用的 API 都要加到这个列表中
-
+                'onMenuShareAppMessage'
             ]
         });
 
@@ -254,9 +254,10 @@ $signPackage = $jssdk->GetSignPackage();
           // 添加分享事件
           var result_share = document.querySelector(".result-share");
           result_share.addEventListener("click", function () {
-            alert("share");
+            // alert("share");
             var headimgurl = '<?php echo $obj->headimgurl;?>';
             var nickname = '<?php echo $obj->nickname;?>';
+            alert("headimgurl: "+headimgurl);
 
             wx.onMenuShareAppMessage({
               title: '钱!钱!!钱!!!', // 分享标题
@@ -276,8 +277,6 @@ $signPackage = $jssdk->GetSignPackage();
             });
           });
         });
-
-
 
     </script>
     <script src="../js/game.js" charset="utf-8"></script>
