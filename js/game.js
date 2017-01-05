@@ -240,10 +240,11 @@ window.addEventListener("load", function () {
     for (var i = moneys.length - 1; i >= 0; i--) {
       if (!$(moneys[i])
         .hasClass("fly")) {
-        alert("no fly class: " + i);
+        // alert("no fly class: " + i);
         moneys[i].classList.add("fly");
         moneys[i].timer = setTimeout((function (i) {
           return function () {
+            alert("timer :" + i);
             moneys[i].classList.remove("fly");
             clearTimeout(moneys[i].timer);
           };
