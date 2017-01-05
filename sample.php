@@ -21,6 +21,8 @@ $signPackage = $jssdk->GetSignPackage();
   <button type="button" name="button" id="start">开始录音</button>
   <br>
   <button type="button" name="button" id="stop">停止录音</button>
+  <br>
+  <button type="button" name="button" id="stopplay">停止播放</button>
 </body>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
@@ -136,6 +138,7 @@ $signPackage = $jssdk->GetSignPackage();
     // });
 
   });
+  var currentVoiceId;
   document.querySelector("#start").onclick = function(){
     wx.startRecord();
     wx.onVoiceRecordEnd({
@@ -150,8 +153,17 @@ $signPackage = $jssdk->GetSignPackage();
     wx.stopRecord({
       success: function (res) {
           var localId = res.localId;
+          currentVoiceId = res.localId;
           alert("stop record");
+          wx.playVoice({
+              localId: localId // 需要播放的音频的本地ID，由stopRecord接口获得
+          });
       }
+    });
+  }
+  document.querySelector("#stopplay").onclick = function(){
+    wx.pauseVoice({
+        localId: currentVoiceId // 需要暂停的音频的本地ID，由stopRecord接口获得
     });
   }
 </script>
