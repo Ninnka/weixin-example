@@ -111,6 +111,7 @@ window.addEventListener("load", function () {
   var btn_close_register = document.querySelector("#btn_close_register");
   btn_close_register.addEventListener("click", function () {
     game_register.classList.add("item-hidden");
+    // btn_close_register.classList.add("item-hidden");
   });
 
   // 添加进入游戏界面事件
