@@ -167,7 +167,7 @@ $signPackage = $jssdk->GetSignPackage();
                             <br> 请认真填写哦
                         </div>
                         <div class="input-wrapper">
-                            <input type="text" name="name" class="register-input" placeholder="姓名" disabled="disabled">
+                            <input type="text" name="name" class="register-input" placeholder="姓名">
                         </div>
                         <div class="input-wrapper">
                             <input type="text" name="tel" class="register-input" placeholder="电话">
