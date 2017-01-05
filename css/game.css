@@ -84,6 +84,8 @@ html {
 .game-start-btn>img {
     width: 2.28rem;
     height: 2.3rem;
+    transform: scale(1);
+    -webkit-transform: scale(1);
 }
 
 .expansion-animation {
@@ -101,23 +103,23 @@ html {
 
 @keyframes expansion {
     from {
-        width: 2.28rem;
-        height: 2.3rem;
+        /*width: 2.28rem;
+        height: 2.3rem;*/
+        transform: scale(1);
     }
     to {
-        width: 2.1rem;
-        height: 2.13rem;
+        /*width: 2.1rem;
+        height: 2.13rem;*/
+        transform: scale(0.7);
     }
 }
 
 @-webkit-keyframes expansion {
     from {
-        width: 2.28rem;
-        height: 2.3rem;
+        -webkit-transform: scale(1);
     }
     to {
-        width: 2.1rem;
-        height: 2.13rem;
+        -webkit-transform: scale(0.7);
     }
 }
 
