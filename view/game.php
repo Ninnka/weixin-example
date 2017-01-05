@@ -239,37 +239,36 @@ $signPackage = $jssdk->GetSignPackage();
 
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script type="text/javascript">
-        wx.config({
-            debug: false,
-            appId: '<?php echo $signPackage["appId"];?>',
-            timestamp: <?php echo $signPackage["timestamp"];?>,
-            nonceStr: '<?php echo $signPackage["nonceStr"];?>',
-            signature: '<?php echo $signPackage["signature"];?>',
-            jsApiList: [
-                // 所有要调用的 API 都要加到这个列表中
-                'onMenuShareAppMessage'
-            ]
-        });
-        var headimgurl = '<?php echo $obj->headimgurl;?>';
-        wx.ready(function() {
-            wx.onMenuShareAppMessage({
-              title: '钱!钱!!钱!!!', // 分享标题
-              desc: '我拿了 ￥ '+mountScope, // 分享描述
-              link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9e04810f0033f158&redirect_uri=http%3A%2F%2F1.ninnka.applinzi.com%2Fview%2Fgame.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect', // 分享链接
-              imgUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=827020255,4071626112&fm=21&gp=0.jpg', // 分享图标
-              type: '', // 分享类型,music、video或link，不填默认为link
-              dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-              success: function () {
-                  // 用户确认分享后执行的回调函数
-                //   console.log("success");
-              },
-              cancel: function () {
-                  // 用户取消分享后执行的回调函数
-                //   console.log("cancel");
-              }
-            });
-        });
+          wx.config({
+    	    debug: false,
+    	    appId: '<?php echo $signPackage["appId"];?>',
+    	    timestamp: <?php echo $signPackage["timestamp"];?>,
+    	    nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+    	    signature: '<?php echo $signPackage["signature"];?>',
+    	    jsApiList: [
+    	      // 所有要调用的 API 都要加到这个列表中
+    	      'onMenuShareAppMessage'
+    	    ]
+    	  });
+    	  wx.ready(function () {
+    	      // 在这里调用 API
+    	    wx.onMenuShareAppMessage({
+    	      title: '数钱赢大奖', // 分享标题
+    	      desc: '数钱赢大奖', // 分享描述
+    	      link: 'http://1.ninnka.applinzi.com/view/game.php', // 分享链接
+    	      imgUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=827020255,4071626112&fm=21&gp=0.jpg', // 分享图标
+    	      type: 'link', // 分享类型,music、video或link，不填默认为link
+    	      dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+    	      success: function () {
+    	          // 用户确认分享后执行的回调函数
 
+    	      },
+    	      cancel: function () {
+    	          // 用户取消分享后执行的回调函数
+    	      }
+    	  	});
+
+    	  });
 
     </script>
     <script src="../js/game.js" charset="utf-8"></script>
