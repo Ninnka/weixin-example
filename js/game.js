@@ -244,7 +244,7 @@ window.addEventListener("load", function () {
         moneys[i].classList.add("fly");
         moneys[i].timer = setTimeout((function (i) {
           return function () {
-            alert("timer :" + i);
+            // alert("timer :" + i);
             moneys[i].classList.remove("fly");
             clearTimeout(moneys[i].timer);
           };
