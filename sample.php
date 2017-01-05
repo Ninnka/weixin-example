@@ -141,7 +141,7 @@ $signPackage = $jssdk->GetSignPackage();
 
   var btn_start = document.querySelector("#start");
   var btn_stop = document.querySelector("#stop");
-  alert(btn_start);
+  // alert(btn_start);
 
   btn_start.addEventListener("click", function(){
     alert("start");
