@@ -8,9 +8,19 @@ $signPackage = $jssdk->GetSignPackage();
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <style media="screen">
+    button{
+      height: 200px;
+      width: 200px;
+      font-size: 40px;
+      line-height: 200px;
+    }
+  </style>
 </head>
 <body>
-
+  <button type="button" name="button" id="start">开始录音</button>
+  <br>
+  <button type="button" name="button" id="stop">停止录音</button>
 </body>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
@@ -25,6 +35,30 @@ $signPackage = $jssdk->GetSignPackage();
    * 邮件主题：【微信JS-SDK反馈】具体问题
    * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
    */
+   window.onload = function(){
+     var btn_start = document.getElementById("start");
+     var btn_stop = document.getElementById("stop");
+
+     btn_start.addEventListener("click", function(){
+       wx.startRecord();
+       wx.onVoiceRecordEnd({
+       // 录音时间超过一分钟没有停止的时候会执行 complete 回调
+           complete: function (res) {
+               var localId = res.localId;
+               alert("onVoiceRecordEnd complete");
+           }
+       });
+     });
+     btn_stop.addEventListener("click", function(){
+       wx.stopRecord({
+         success: function (res) {
+             var localId = res.localId;
+             alert("stop record");
+         }
+       });
+     });
+   }
+
   wx.config({
     debug: true,
     appId: '<?php echo $signPackage["appId"];?>',
@@ -85,8 +119,8 @@ $signPackage = $jssdk->GetSignPackage();
     //   }
     // });
 
-    wx.startRecord();
-
+    // wx.startRecord();
+    //
     // wx.stopRecord({
     //   success: function (res) {
     //       var localId = res.localId;
