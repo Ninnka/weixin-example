@@ -7,7 +7,6 @@ window.addEventListener("load", function () {
   // var username;
   var usertel;
   var register_name = document.querySelector("input[name=name]");
-  register_name.value = username;
   var register_tel = document.querySelector("input[name=tel]");
 
   // 三个主要容器
@@ -125,6 +124,8 @@ window.addEventListener("load", function () {
       gaming.classList.remove("item-hidden");
       // username = register_name.value;
       usertel = register_tel.value;
+      register_name.value = username;
+      console.log("username", username);
       $.ajax({
         type: "POST",
         url: "http://1.ninnka.applinzi.com/view/countmoney_sign.php",
