@@ -238,7 +238,6 @@ $signPackage = $jssdk->GetSignPackage();
 
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script type="text/javascript">
-        console.log("code: ", $code);
         wx.config({
             debug: false,
             appId: '<?php echo $signPackage["appId"];?>',
@@ -252,8 +251,15 @@ $signPackage = $jssdk->GetSignPackage();
         });
 
         wx.ready(function() {
-
+          // 添加分享事件
+          var result_share = document.querySelector(".result-share");
+          result_share.addEventListener("click", function () {
+            alert("share");
+            // var imgurl = $obj[""]
+          });
         });
+
+
 
     </script>
     <script src="../js/game.js" charset="utf-8"></script>
