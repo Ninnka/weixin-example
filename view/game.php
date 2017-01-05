@@ -267,13 +267,10 @@ $signPackage = $jssdk->GetSignPackage();
     	      }
     	  	});
 
-            var un = '<?php echo $obj->nickname;?>';
-            console.log("un", un);
-
-
     	  });
 
-
+          var un = '<?php echo $obj->nickname;?>';
+          alert("un: "+un);
 
     </script>
     <script src="../js/game.js" charset="utf-8"></script>
