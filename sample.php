@@ -37,6 +37,22 @@ $signPackage = $jssdk->GetSignPackage();
   });
   wx.ready(function () {
     // 在这里调用 API
+    wx.onMenuShareAppMessage({
+      title: '分享测试', // 分享标题
+      desc: '分享测试', // 分享描述
+      link: 'http://1.ninnka.applinzi.com/view/game.html', // 分享链接
+      imgUrl: 'http://wx.qlogo.cn/mmopen/LF5wMia79of1PuMAfmuqApDvhdhXZ3wMFG6XeWM9S9zGSnZwkLXwMWrKoj6Kic2wlePODpakxyibL3nODlLb50S9StyQUdabDwI/0', // 分享图标
+      type: '', // 分享类型,music、video或link，不填默认为link
+      dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+      success: function () {
+          // 用户确认分享后执行的回调函数
+          console.log("success");
+      },
+      cancel: function () {
+          // 用户取消分享后执行的回调函数
+          console.log("cancel");
+      }
+    });
   });
 </script>
 </html>

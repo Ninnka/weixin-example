@@ -31,7 +31,7 @@ class JSSDK {
       "signature" => $signature,
       "rawString" => $string
     );
-    return $signPackage; 
+    return $signPackage;
   }
 
   private function createNonceStr($length = 16) {
@@ -102,12 +102,12 @@ class JSSDK {
   }
 
   private function get_php_file($filename) {
-    return trim(substr(file_get_contents($filename), 15));
+    return trim(substr(file_get_contents("saemc://".$filename), 15));
   }
   private function set_php_file($filename, $content) {
+    file_put_contents("saemc://".$filename, $content);
     $fp = fopen($filename, "w");
     fwrite($fp, "<?php exit();?>" . $content);
     fclose($fp);
   }
 }
-
