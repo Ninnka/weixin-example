@@ -1,3 +1,8 @@
+<?php
+require_once "jssdk.php";
+$jssdk = new JSSDK("wx9e04810f0033f158", "ff165d3bba903801dd02712c5b57ec8f");
+$signPackage = $jssdk->GetSignPackage();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -206,7 +211,7 @@
 
     <script src="../js/jquery-3.1.1.min.js" charset="utf-8"></script>
 
-    <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script type="text/javascript">
         wx.config({
             debug: true,
@@ -216,7 +221,7 @@
             signature: '<?php echo $signPackage["signature"];?>',
             jsApiList: [
                 // 所有要调用的 API 都要加到这个列表中
-                "startRecord", "stopRecord", "onVoiceRecordEnd", "playVoice", "pauseVoice", "onVoicePlayEnd"
+
             ]
         });
 
@@ -224,7 +229,7 @@
 
         });
 
-    </script> -->
+    </script>
     <script src="../js/game.js" charset="utf-8"></script>
 
 </html>
