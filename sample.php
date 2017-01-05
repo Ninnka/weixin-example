@@ -135,8 +135,8 @@ $signPackage = $jssdk->GetSignPackage();
     //     }
     // });
 
-    var btn_start = document.getElementById("start");
-    var btn_stop = document.getElementById("stop");
+    var btn_start = document.querySelector("#start");
+    var btn_stop = document.querySelector("#stop");
 
     btn_start.addEventListener("click", function(){
       alert("start");
