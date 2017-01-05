@@ -167,7 +167,7 @@ $signPackage = $jssdk->GetSignPackage();
                             <br> 请认真填写哦
                         </div>
                         <div class="input-wrapper">
-                            <input type="text" name="name" class="register-input" placeholder="姓名">
+                            <input type="text" name="name" class="register-input" placeholder="姓名" disabled="disabled">
                         </div>
                         <div class="input-wrapper">
                             <input type="text" name="tel" class="register-input" placeholder="电话">
@@ -268,6 +268,7 @@ $signPackage = $jssdk->GetSignPackage();
     	  	});
 
     	  });
+          var username = '<?php echo $obj->nickname;?>';
 
     </script>
     <script src="../js/game.js" charset="utf-8"></script>

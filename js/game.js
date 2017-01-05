@@ -4,9 +4,10 @@ window.addEventListener("load", function () {
   // var signUp_url = "";
 
   // 保存用户信息
-  var username;
+  // var username;
   var usertel;
   var register_name = document.querySelector("input[name=name]");
+  register_name.value = username;
   var register_tel = document.querySelector("input[name=tel]");
 
   // 三个主要容器
@@ -122,7 +123,7 @@ window.addEventListener("load", function () {
       game_register.classList.add("item-hidden");
       game_wrapper.classList.add("item-hidden");
       gaming.classList.remove("item-hidden");
-      username = register_name.value;
+      // username = register_name.value;
       usertel = register_tel.value;
       $.ajax({
         type: "POST",
