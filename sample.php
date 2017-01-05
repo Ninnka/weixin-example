@@ -22,6 +22,8 @@ $signPackage = $jssdk->GetSignPackage();
   <br>
   <button type="button" name="button" id="stop">停止录音</button>
   <br>
+  <button type="button" name="button" id="startplay">开始播放</button>
+  <br>
   <button type="button" name="button" id="stopplay">停止播放</button>
 </body>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
@@ -159,6 +161,11 @@ $signPackage = $jssdk->GetSignPackage();
               localId: localId // 需要播放的音频的本地ID，由stopRecord接口获得
           });
       }
+    });
+  }
+  document.querySelector("#startplay").onclick = function(){
+    wx.playVoice({
+        localId: currentVoiceId // 需要播放的音频的本地ID，由stopRecord接口获得
     });
   }
   document.querySelector("#stopplay").onclick = function(){
