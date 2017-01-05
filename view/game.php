@@ -71,35 +71,35 @@ $signPackage = $jssdk->GetSignPackage();
                             <li class="rank-listitem">
                                 <img class="rank-award" src="../public/imgs/1.png" alt="">
                                 <img class="rank-avatar" src="../public/imgs/avatar.png" alt="">
-                                <span class="rank-username">Xibi</span>
-                                <span class="rank-scope">800分</span>
+                                <span class="rank-username"></span>
+                                <span class="rank-scope"></span>
                             </li>
                             <li class="rank-listitem">
                                 <img class="rank-award" src="../public/imgs/2.png" alt="">
                                 <img class="rank-avatar" src="../public/imgs/avatar.png" alt="">
-                                <span class="rank-username">Xibi</span>
-                                <span class="rank-scope">700分</span>
+                                <span class="rank-username"></span>
+                                <span class="rank-scope"></span>
 
                             </li>
                             <li class="rank-listitem">
                                 <img class="rank-award" src="../public/imgs/3.png" alt="">
                                 <img class="rank-avatar" src="../public/imgs/avatar.png" alt="">
-                                <span class="rank-username">Xibi</span>
-                                <span class="rank-scope">600分</span>
+                                <span class="rank-username"></span>
+                                <span class="rank-scope"></span>
 
                             </li>
                             <li class="rank-listitem">
                                 <span class="rank-number">4</span>
                                 <img class="rank-avatar" src="../public/imgs/avatar.png" alt="">
-                                <span class="rank-username">Xibi</span>
-                                <span class="rank-scope">500分</span>
+                                <span class="rank-username"></span>
+                                <span class="rank-scope"></span>
 
                             </li>
                             <li class="rank-listitem">
                                 <span class="rank-number">5</span>
                                 <img class="rank-avatar" src="../public/imgs/avatar.png" alt="">
-                                <span class="rank-username">Xibi</span>
-                                <span class="rank-scope">400分</span>
+                                <span class="rank-username"></span>
+                                <span class="rank-scope"></span>
 
                             </li>
                         </ul>

@@ -39,21 +39,28 @@ window.addEventListener("load", function () {
   var gameNavWrapper = document.querySelector(".game-nav");
   var gameNavs = document.querySelectorAll(".game-nav-item");
 
+  // 排行榜的子项
+  var rank_item_names = document.querySelectorAll(".rank-username");
+  var rank_item_scopes = document.querySelectorAll(".rank-scope");
+
   function addGameNavClick() {
     $(gameNavs)
       .on("touchstart", function () {
         // 保存当前点击的导航栏按钮位置
         var nav_pos = $(this)
           .index();
-        if (nav_pos === 1) {
+        if (nav_pos === 0) {
           $.ajax({
             type: "GET",
             url: "http://1.ninnka.applinzi.com/view/countmoney_rank.php",
             dataType: "json",
             success: function (res) {
-              // var data = JSON.parse(res.data);
-              // console.log("res", res);
-              console.log(res);
+              // console.log(res);
+              var data = res.data;
+              for (var i = 0; i < data.length; i++) {
+                rank_item_names[i].innerHTML = data[i].username;
+                rank_item_scopes[i].innerHTML = data[i].userscope + "分";
+              }
             }
           })
         }
