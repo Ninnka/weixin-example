@@ -38,31 +38,6 @@ $signPackage = $jssdk->GetSignPackage();
   //  window.onload = function(){
   //
   //  }
-  var btn_start = document.querySelector("#start");
-  var btn_stop = document.querySelector("#stop");
-  // alert(btn_start);
-
-  btn_start.addEventListener("click", function(){
-    alert("start");
-    wx.startRecord();
-    wx.onVoiceRecordEnd({
-    // 录音时间超过一分钟没有停止的时候会执行 complete 回调
-        complete: function (res) {
-            var localId = res.localId;
-            alert("onVoiceRecordEnd complete");
-        }
-    });
-  });
-  btn_stop.addEventListener("click", function(){
-    alert("stop");
-
-    wx.stopRecord({
-      success: function (res) {
-          var localId = res.localId;
-          alert("stop record");
-      }
-    });
-  });
 
   wx.config({
     debug: true,
@@ -72,7 +47,7 @@ $signPackage = $jssdk->GetSignPackage();
     signature: '<?php echo $signPackage["signature"];?>',
     jsApiList: [
       // 所有要调用的 API 都要加到这个列表中
-      // "startRecord", "stopRecord", "onVoiceRecordEnd"
+      "startRecord", "stopRecord", "onVoiceRecordEnd"
     ]
   });
   wx.ready(function () {
@@ -164,7 +139,31 @@ $signPackage = $jssdk->GetSignPackage();
     // var btn_stop = document.querySelector("#stop");
     // alert(btn_start);
 
+    var btn_start = document.querySelector("#start");
+    var btn_stop = document.querySelector("#stop");
+    // alert(btn_start);
 
+    btn_start.addEventListener("click", function(){
+      alert("start");
+      wx.startRecord();
+      wx.onVoiceRecordEnd({
+      // 录音时间超过一分钟没有停止的时候会执行 complete 回调
+          complete: function (res) {
+              var localId = res.localId;
+              alert("onVoiceRecordEnd complete");
+          }
+      });
+    });
+    btn_stop.addEventListener("click", function(){
+      alert("stop");
+
+      wx.stopRecord({
+        success: function (res) {
+            var localId = res.localId;
+            alert("stop record");
+        }
+      });
+    });
 
   });
 </script>
