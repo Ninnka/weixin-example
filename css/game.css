@@ -683,8 +683,8 @@ body {
 
 .scopeandcountdown>span {
     position: absolute;
-    /*top: 0.33rem;*/
-    top: 2.87%;
+    top: 0.33rem;
+    /*top: 2.87%;*/
     font-size: 0.5rem;
     color: white;
 }
@@ -705,8 +705,8 @@ body {
     font-size: 0.434rem !important;
     color: #a47b47 !important;
     left: 3.08rem;
-    /*top: 0.38rem !important;*/
-    top: 3.3% !important;
+    top: 0.38rem !important;
+    /*top: 3.3% !important;*/
 }
 
 .gaming-title {
