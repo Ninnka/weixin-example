@@ -132,7 +132,8 @@ window.addEventListener("load", function () {
         url: "http://1.ninnka.applinzi.com/view/countmoney_sign.php",
         data: {
           name: username,
-          tel: usertel
+          tel: usertel,
+          avatar: useravatar
         },
         // dataType: "json",
         success: function (res) {

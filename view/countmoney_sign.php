@@ -8,12 +8,13 @@
 
 $name = $_POST["name"];
 $tel = $_POST["tel"];
+$avatar = $_POST["avatar"];
 // echo "ok";
 $conn = mysqli_connect(SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS,SAE_MYSQL_DB);
 
 $conn->query("set names uft8");
 $queryUser = "select * from countmoney where username='{$name}'";
-$sign = "insert into countmoney(username, usertel) VALUES ('{$name}','{$tel}')";
+$sign = "insert into countmoney(username, usertel, useravatar) VALUES ('{$name}','{$tel}','{$avatar}')";
 
 // $queryUser = "select * from countmoney";
 

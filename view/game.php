@@ -270,6 +270,7 @@ $signPackage = $jssdk->GetSignPackage();
     	  });
 
           var username = '<?php echo $obj->nickname;?>';
+          var useravatar = '<?php echo $obj->headimgurl;?>';
         //   alert("un: "+un);
 
     </script>
