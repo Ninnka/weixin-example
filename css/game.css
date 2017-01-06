@@ -362,8 +362,8 @@ body {
 .rank-scope {
     font-size: 0.25rem;
     position: absolute;
-    /*top: 0.45rem;*/
-    top: 3.91%;
+    top: 0.45rem;
+    /*top: 3.91%;*/
     right: 0.13rem;
 }
 
