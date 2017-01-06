@@ -532,7 +532,8 @@ body {
 .gaming {
     overflow: hidden;
     width: 100%;
-    height: 11.5rem;
+    /*height: 11.5rem;*/
+    height: 100%;
     background-image: url(../public/imgs/gaming.png);
     background-size: cover;
     position: relative;
@@ -542,7 +543,7 @@ body {
     width: 100%;
     height: 1.62rem;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     background-image: url(../public/imgs/foot.png);
     background-size: 120% 120%;
     background-position: -1.24rem 0;
@@ -628,7 +629,8 @@ body {
     height: 1.52rem;
     width: 2.37rem;
     position: absolute;
-    bottom: 2.24rem;
+    /*bottom: 2.24rem;*/
+    bottom: 19.48%;
     right: 0.1rem;
     opacity: 1;
 }
@@ -672,7 +674,8 @@ body {
     height: 1.06rem;
     position: absolute;
     left: 1.43rem;
-    top: 3.72rem;
+    /*top: 3.72rem;*/
+    top: 32.35%;
     background-image: url(../public/imgs/scopeandcountdown.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -680,7 +683,8 @@ body {
 
 .scopeandcountdown>span {
     position: absolute;
-    top: 0.33rem;
+    /*top: 0.33rem;*/
+    top: 2.87%;
     font-size: 0.5rem;
     color: white;
 }
@@ -701,7 +705,8 @@ body {
     font-size: 0.434rem !important;
     color: #a47b47 !important;
     left: 3.08rem;
-    top: 0.38rem !important;
+    /*top: 0.38rem !important;*/
+    top: 3.3% !important;
 }
 
 .gaming-title {
@@ -709,7 +714,8 @@ body {
     height: 2.17rem;
     font-size: 0;
     position: absolute;
-    top: 1.45rem;
+    /*top: 1.45rem;*/
+    top: 12.61%;
     left: 0.55rem;
 }
 
@@ -731,7 +737,8 @@ body {
 
 .game-result {
     width: 100%;
-    height: 11.5rem;
+    /*height: 11.5rem;*/
+    height: 100%;
     background-image: url(../public/imgs/game-result.png);
     background-size: cover;
     position: relative;
@@ -741,13 +748,15 @@ body {
     font-size: 0.75rem;
     color: #fff;
     position: absolute;
-    top: 2.57rem;
+    /*top: 2.57rem;*/
+    top: 22.38%;
     left: 2.1rem;
 }
 
 .result-title {
     position: relative;
-    top: 3.63rem;
+    /*top: 3.63rem;*/
+    top: 31.56%;
     text-align: center;
 }
 
@@ -758,7 +767,8 @@ body {
 
 .scoperank-hint {
     position: relative;
-    top: 4.10rem;
+    /*top: 4.10rem;*/
+    top: 35.65%;
     font-size: 0.24rem;
     color: #d21026;
     line-height: 0.61rem;
@@ -775,7 +785,8 @@ body {
     width: 1.80rem;
     height: 1.90rem;
     left: 1.02rem;
-    top: 6.42rem;
+    /*top: 6.42rem;*/
+    top: 55.82%;
 }
 
 .result-share {
@@ -784,13 +795,15 @@ body {
     width: 1.80rem;
     height: 1.90rem;
     right: 0.80rem;
-    top: 6.42rem;
+    /*top: 6.42rem;*/
+    top: 55.82%;
 }
 
 .result-floatmoney {
     position: absolute;
     right: 1.32rem;
-    top: 5.72rem;
+    /*top: 5.72rem;*/
+    top: 49.74%;
     width: 1.05rem;
     height: 1.18rem;
     transform: rotate(-110deg);
